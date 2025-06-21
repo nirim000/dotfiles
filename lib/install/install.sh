@@ -17,7 +17,7 @@ source_share_directory="$source_directory/share"
 source_lib_directory="$source_directory/lib"
 
 package_name="ml4w-hyprland"
-base_directory="/usr"
+base_directory="/var/usrlocal"
 bin_directory="$base_directory/bin"
 share_directory="$base_directory/share/$package_name"
 lib_directory="$base_directory/lib/$package_name"
