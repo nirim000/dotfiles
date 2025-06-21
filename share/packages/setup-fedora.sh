@@ -164,8 +164,8 @@ gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
 sudo yum install --assumeyes gum
 
 # Oh My Posh
-sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
-sudo chmod +x /usr/local/bin/oh-my-posh
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /var/usrlocal/local/bin/oh-my-posh
+sudo chmod +x /var/usrlocal/local/bin/oh-my-posh
 
 # Cargo
 cargo install -q matugen
