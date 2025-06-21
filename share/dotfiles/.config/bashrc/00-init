@@ -6,5 +6,5 @@
 # Exports
 # -----------------------------------------------------
 export EDITOR=nvim
-export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="/var/usrlocal/lib/ccache/bin/:$PATH"
 export PATH=$PATH:~/.cargo/bin/
