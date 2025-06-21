@@ -31,8 +31,8 @@ fi
 _writeLog 0 "Checking for hypridle-git"
 if [[ $(_isInstalled "hypridle-git") == 0 ]]; then
     _removePackage "hypridle-git"
-    if [ -f /usr/lib/debug/usr/bin/hypridle.debug ]; then
-        sudo rm /usr/lib/debug/usr/bin/hypridle.debug
+    if [ -f /var/usrlocal/lib/debug/usr/bin/hypridle.debug ]; then
+        sudo rm /var/usrlocal/lib/debug/usr/bin/hypridle.debug
         _writeLog 1 "/usr/lib/debug/usr/bin/hypridle.debug removed"
     fi
     _writeLog 1 "hypridle-git uninstalled."
@@ -44,8 +44,8 @@ fi
 _writeLog 0 "Checking for hyprlock-git"
 if [[ $(_isInstalled "hyprlock-git") == 0 ]]; then
     _removePackage "hyprlock-git"
-    if [ -f /usr/lib/debug/usr/bin/hyprlock.debug ]; then
-        sudo rm /usr/lib/debug/usr/bin/hyprlock.debug
+    if [ -f /var/usrlocal/lib/debug/usr/bin/hyprlock.debug ]; then
+        sudo rm /var/usrlocal/lib/debug/usr/bin/hyprlock.debug
         echo ":: /usr/lib/debug/usr/bin/hyprlock.debug removed"
     fi
     _writeLog 1 "hyprlock-git uninstalled."
