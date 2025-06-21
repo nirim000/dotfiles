@@ -126,17 +126,17 @@ flatpak uninstall com.ml4w.sidebar
 flatpak uninstall com.ml4w.settings
 
 app_name="com.ml4w.hyprland.settings"
-if [ -f /usr/share/applications/$app_name.desktop ]; then
-    sudo rm /usr/share/applications/$app_name.desktop
+if [ -f /var/usrlocal/share/applications/$app_name.desktop ]; then
+    sudo rm /var/usrlocal/share/applications/$app_name.desktop
 fi
 if [ -f $HOME/.local/share/applications/$app_name.desktop ]; then
-    sudo rm /usr/share/applications/$app_name.desktop
+    sudo rm /var/usrlocal/share/applications/$app_name.desktop
 fi
-if [ -f /usr/share/icons/hicolor/128x128/apps/$app_name.png ]; then
-    sudo rm /usr/share/icons/hicolor/128x128/apps/$app_name.png
+if [ -f /var/usrlocal/share/icons/hicolor/128x128/apps/$app_name.png ]; then
+    sudo rm /var/usrlocal/share/icons/hicolor/128x128/apps/$app_name.png
 fi
-if [ -f /usr/bin/$app_name ]; then
-    sudo rm /usr/bin/$app_name
+if [ -f /var/usrlocal/bin/$app_name ]; then
+    sudo rm /var/usrlocal/bin/$app_name
 fi
 
 echo ":: ML4W Apps removed"
