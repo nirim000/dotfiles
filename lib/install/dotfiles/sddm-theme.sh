@@ -5,7 +5,7 @@ sddm_theme_name="sequoia"
 sddm_theme_master="main.zip"
 sddm_theme_folder="sddm-sequoia"
 sddm_theme_download="https://codeberg.org/minMelody/sddm-sequoia/archive/main.zip"
-sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
+sddm_asset_folder="/var/usrlocal/share/sddm/themes/$sddm_theme_name/backgrounds"
 # sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sequoia
 
 sddm_theme_tpl="$share_directory/sddm/theme.conf"
@@ -26,7 +26,7 @@ if [ -z $automation_displaymanager ]; then
             unzip -o -q $download_folder/$sddm_theme_name/$sddm_theme_master -d $download_folder/$sddm_theme_name &>>$(_getLogFile)
             _writeLog 1 "Unzip of $sddm_theme_name complete"
 
-            sudo cp -r $download_folder/$sddm_theme_name/$sddm_theme_folder /usr/share/sddm/themes/$sddm_theme_name
+            sudo cp -r $download_folder/$sddm_theme_name/$sddm_theme_folder /var/usrlocal/share/sddm/themes/$sddm_theme_name
             _writeLog 1 "$sddm_theme_name copied to target location"
 
             if [ ! -d /etc/sddm.conf.d/ ]; then
@@ -37,14 +37,14 @@ if [ -z $automation_displaymanager ]; then
             sudo cp $share_directory/sddm/sddm.conf /etc/sddm.conf.d/
             _writeLog 1 "File /etc/sddm.conf.d/sddm.conf updated."
 
-            if [ -f /usr/share/sddm/themes/$sddm_theme_name/theme.conf ]; then
+            if [ -f /var/usrlocal/share/sddm/themes/$sddm_theme_name/theme.conf ]; then
 
                 # Cache file for holding the current wallpaper
                 sudo cp $wallpaper_directory/default.jpg $sddm_asset_folder/current_wallpaper.jpg
                 _writeLog 1 "Default wallpaper copied into $sddm_asset_folder"
 
-                sudo cp $sddm_theme_tpl /usr/share/sddm/themes/$sddm_theme_name/
-                sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.jpg"'/' /usr/share/sddm/themes/$sddm_theme_name/theme.conf
+                sudo cp $sddm_theme_tpl /var/usrlocal/share/sddm/themes/$sddm_theme_name/
+                sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.jpg"'/' /var/usrlocal/share/sddm/themes/$sddm_theme_name/theme.conf
                 _writeLog 1 "File theme.conf updated in /usr/share/sddm/themes/$sddm_theme_name/"
             fi
             _writeLogTerminal 1 "Theme installed"
