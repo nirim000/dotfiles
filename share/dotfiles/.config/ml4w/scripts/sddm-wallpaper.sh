@@ -19,9 +19,9 @@ figlet -f smslant "SDDM Wallpaper"
 echo -e "${NONE}"
 
 sddm_theme_name="sequoia"
-sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
+sddm_asset_folder="/var/usrlocal/share/sddm/themes/$sddm_theme_name/backgrounds"
 
-sddm_theme_tpl="/usr/share/ml4w-hyprland/sddm/theme.conf"
+sddm_theme_tpl="/var/usrlocal/share/ml4w-hyprland/sddm/theme.conf"
 if [ -f $HOME/.config/ml4w/settings/sddm/theme.conf ]; then
     sddm_theme_tpl="$HOME/.config/ml4w/settings/sddm/theme.conf"
     echo ":: Using custum theme.conf"
@@ -40,21 +40,21 @@ if [ ! -d /etc/sddm.conf.d/ ]; then
     echo ":: Folder /etc/sddm.conf.d created."
 fi
 
-sudo cp /usr/share/ml4w-hyprland/sddm/sddm.conf /etc/sddm.conf.d/
+sudo cp /var/usrlocal/share/ml4w-hyprland/sddm/sddm.conf /etc/sddm.conf.d/
 echo ":: File /etc/sddm.conf.d/sddm.conf updated."
 
 sudo cp $current_wallpaper $sddm_asset_folder/current_wallpaper.$extension
 echo ":: Current wallpaper copied into $sddm_asset_folder"
 
-sudo cp $sddm_theme_tpl /usr/share/sddm/themes/$sddm_theme_name/
-sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.$extension"'/' /usr/share/sddm/themes/$sddm_theme_name/theme.conf
+sudo cp $sddm_theme_tpl /var/usrlocal/share/sddm/themes/$sddm_theme_name/
+sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.$extension"'/' /var/usrlocal/share/sddm/themes/$sddm_theme_name/theme.conf
 echo ":: File theme.conf updated in /usr/share/sddm/themes/$sddm_theme_name/"
 echo
 
 echo ":: You can preview your updated SDDM Login screen. (Close it with SUPER+Q)"
 echo
 if gum confirm "Do you want to preview the result?"; then
-    sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sequoia
+    sddm-greeter-qt6 --test-mode --theme /var/usrlocal/share/sddm/themes/sequoia
 fi
 
 echo
